@@ -9,15 +9,16 @@ CREATE TABLE Persons (
 
 /*
 -- 6. Return a list of employees who have the JobTitle Network Administrator and--    were hired in 2009. Sort the result by HireDate from most recently hired to --    least recently hired. 
+
 Select * From HumanResources.Employee
 Where HireDate >= '01/01/2009' AND HireDate <= '12/31/2009'
 Order By HireDate Desc
 
 -- 7. Using the query from #6, return only employees who are salaried
+
 Select * From HumanResources.Employee
 Where HireDate >= '01/01/2009' AND HireDate <= '12/31/2009' AND SalariedFlag = 1
 Order By HireDate Desc
-
 
 Select * From HumanResources.Employee
 Where LEFT(BusinessEntityID, 3) IN ('9%');
@@ -46,10 +47,20 @@ Where AccountNumber Like '10%' AND TerritoryID IN ('1', '5')
 group by customerid, SalesPersonID, TerritoryID
 Order by AvgSpent Desc*/
 
-/*Return a distinct list of customer IDs that placed an online order and includethe date of the 1st order and the date of the most recent order also include thenumber of orders each customer has placed-- Sales.SalesOrderHeader
-Select CustomerID, MIN(OrderDate), MAX(OrderDate), Count(*)From Sales.SalesOrderHeaderWhere OnlineOrderFlag = 1Group By CustomerIDOrder By Count(*)
+/*Return a distinct list of customer IDs that placed an online order and includethe date of the 1st order and the date of the most recent order also include thenumber of orders each customer has placed-- 
+Sales.SalesOrderHeader
+Select CustomerID, MIN(OrderDate), MAX(OrderDate), Count(*)
+From Sales.SalesOrderHeader
+Where OnlineOrderFlag = 1
+Group By CustomerID
+Order By Count(*)
+
 Return the customer IDs of the most recent online order
-Select Top 1 CustomerID, MIN(OrderDate), MAX(OrderDate), Count(*)From Sales.SalesOrderHeaderWhere OnlineOrderFlag = 1Group By CustomerIDOrder By Count(*)
+Select Top 1 CustomerID, MIN(OrderDate), MAX(OrderDate), Count(*)
+From Sales.SalesOrderHeader
+Where OnlineOrderFlag = 1
+Group By CustomerID
+Order By Count(*)
 
 
 /*How many customers are in territory id 4 and 5*/
