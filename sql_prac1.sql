@@ -1,3 +1,5 @@
+-- 1. Create a simple table 
+
 CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
