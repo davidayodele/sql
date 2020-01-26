@@ -32,13 +32,14 @@ group by customerid
 Order by AmtSpent Desc
 
 -- Unique comb of cust ids and saleperson ids w acct num starting w 10 and living in territory id 1 or 5,, include avg total amt due
+
 Select customerid, SalesPersonID, TerritoryID, avg(totaldue) as AvgSpent
 from Sales.SalesOrderHeader
 Where AccountNumber Like '10%' AND TerritoryID IN ('1', '5')
 group by customerid, SalesPersonID, TerritoryID
 Order by AvgSpent Desc
 
-AVERAGE Return a distinct list of customer IDs that placed an online order also incl avg of subtot and totdue
+-- AVERAGE, Return a distinct list of customer IDs that placed an online order also incl avg of subtot and totdue
 Select customerid, AVG(SubTotal) as AvgSubTot, AVG(TotalDue) as AvgTotDue
 FROM Sales.SalesOrderHeader
 group by CustomerID
@@ -49,7 +50,9 @@ Where AccountNumber Like '10%' AND TerritoryID IN ('1', '5')
 group by customerid, SalesPersonID, TerritoryID
 Order by AvgSpent Desc*/
 
-/*Return a distinct list of customer IDs that placed an online order and includethe date of the 1st order and the date of the most recent order also include thenumber of orders each customer has placed-- 
+/*
+-- Return a distinct list of customer IDs that placed an online order and includethe date of the 1st order and the date of the most recent order also include thenumber of orders each customer has placed-- 
+
 Sales.SalesOrderHeader
 Select CustomerID, MIN(OrderDate), MAX(OrderDate), Count(*)
 From Sales.SalesOrderHeader
@@ -57,7 +60,8 @@ Where OnlineOrderFlag = 1
 Group By CustomerID
 Order By Count(*)
 
-Return the customer IDs of the most recent online order
+-- Return the customer IDs of the most recent online order
+
 Select Top 1 CustomerID, MIN(OrderDate), MAX(OrderDate), Count(*)
 From Sales.SalesOrderHeader
 Where OnlineOrderFlag = 1
