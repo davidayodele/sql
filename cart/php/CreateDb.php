@@ -26,7 +26,7 @@ class CreateDb
       $this->password = $password;
 
       // create connection
-        $this->con = mysqli_connect($servername, $username, $password);
+      $this->con = mysqli_connect($servername, $username, $password);
 
         // Check connection
         if (!$this->con){
