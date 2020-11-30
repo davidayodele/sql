@@ -90,7 +90,7 @@ include("php/header.php"); // do not use require_once()
                 $result = $database->getData();                
                 //echo "Hiyah2";
                 $row = mysqli_fetch_assoc($result);
-                //echo "row val: $row";
+                echo "row val: $row";
                 while ($row = mysqli_fetch_assoc($result)){
                     component($row['product_name'], $row['price'], $row['img'], $row['id']);
                 }
