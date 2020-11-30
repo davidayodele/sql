@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     ($prod, "$email");";
 
     echo "$query";
-    print_r($database->con);
+    //print_r($database->con);
     
     $query_result = mysqli_query($database->con, $query);
     if($query_result) {
