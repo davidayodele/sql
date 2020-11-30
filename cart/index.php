@@ -67,7 +67,7 @@ echo "Connected still!";
 <body>
 
 <h1> Hi there </h1>
-<?php echo "Hiyah"; require_once ("php/header.php"); ?>
+<?php require_once ("php/header.php"); echo "Hiyah"; ?>
 <div class="container">
         <div class="row text-center py-5">
             <?php
