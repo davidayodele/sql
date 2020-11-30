@@ -69,13 +69,14 @@ echo "Connected still!";
 <h1> Hi there </h1>
 
 <?php 
+/*
 if(file_exists($_SESSION['ROOT_PATH'] . '/php/CreateDb.php'))
 {
  echo 'OK';
 } else {
    echo 'KO';
 }
-
+*/
 include ("php/header.php"); // do not use require_once() 
 ?>
 <div class="container">
