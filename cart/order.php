@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	//print output text
 	print "Thank you " . $name . "! We have received your order! Your customer id is your email: ". $email;
     print "<br><br>We will contact you soon!";
+    echo "<br><br><a href='index.php' class="btn">Return</a>";
 }
-
-echo "<br><br><a href='index.php' class="btn">Return</a>";
 ?>
