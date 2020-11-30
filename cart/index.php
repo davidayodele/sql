@@ -67,7 +67,17 @@ echo "Connected still!";
 <body>
 
 <h1> Hi there </h1>
-<?php require ("php/header.php"); // do not use require_once() ?>
+
+<?php 
+if(file_exists($_SESSION['ROOT_PATH'] . '/php/header.php'))
+{
+ echo 'OK';
+} else {
+   echo 'KO';
+}
+
+require ("php/header.php"); // do not use require_once() 
+?>
 <div class="container">
         <div class="row text-center py-5">
             <?php
