@@ -49,6 +49,7 @@ class CreateDb
                              vendor_id INT(11) NOT NULL DEFAULT 0,
                              exp_date DATE,
                              etoh_amt FLOAT,
+                             reviews FLOAT NOT NULL DEFAULT 0,
                              img VARCHAR (255)
                             );";
 

@@ -1,6 +1,6 @@
 CREATE TABLE orders
 (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,                             
-    price FLOAT,                            
+    price FLOAT NOT NULL,                            
     product_id INT(11) NOT NULL,
     order_date DATE now(),
     email VARCHAR (255) NOT NULL,

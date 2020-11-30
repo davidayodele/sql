@@ -80,6 +80,9 @@ if(file_exists($_SESSION['ROOT_PATH'] . '/php/CreateDb.php'))
 */
 include("php/header.php"); // do not use require_once() 
 ?>
+<br>
+<br>
+<a href='sql/cart/admin.php' class="btn">Admin</a>
 <div class="container">
         <div class="row text-center py-5">
             <?php
@@ -121,11 +124,11 @@ DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br /
 <br>
 <br>
 <h2>New Review</h2>
-<form method="post" action="customer.php">
-Email: <input type="email" name="customer_email" placeholder="Enter your email" /><br />
-Product name: <input type="text" name="customer_name" placeholder="Enter the item name" /><br />
-Review (1 - 5): <input type="tel" name="customer_phone" placeholder="Enter your review" /><br />
-Review details: <textarea name="rev_text"></textarea><br />
+<form method="post" action="reviewer.php">
+Email: <input type="email" name="reviewer_email" placeholder="Enter your email" /><br />
+Product ID: <input type="text" name="product_id" placeholder="Enter the product ID" /><br />
+Review (1 - 5): <input type="tel" name="customer_rev" placeholder="Enter your review" /><br />
+Review details: <textarea name="customer_rev_text"></textarea><br />
 <input type="submit" value="Submit" />
 </form>
 
@@ -134,10 +137,11 @@ Review details: <textarea name="rev_text"></textarea><br />
 <br>
 <br>
 <h2>New Vendor</h2>
-<form method="post" action="customer.php">
-Website: <input type="text" name="customer_email" placeholder="Enter your email" /><br />
-Name: <input type="text" name="customer_name" placeholder="Enter your name" /><br />
-Phone: <input type="tel" name="customer_phone" placeholder="Enter your Phone number" /><br />
+<form method="post" action="vendor.php">
+Email: <input type="email" name="vendor_email" placeholder="Enter your email" /><br />
+Website: <input type="text" name="vendor_site" placeholder="Enter your website" /><br />
+Name: <input type="text" name="vendor_name" placeholder="Enter your name" /><br />
+Phone: <input type="tel" name="vendor_phone" placeholder="Enter your Phone number" /><br />
 Address: <input type="text" name="vendor_addr" placeholder="Enter your Phone address" /><br />
 <input type="submit" value="Submit" />
 </form>
