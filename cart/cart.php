@@ -2,8 +2,8 @@
 
 session_start();
 
-require_once ("php/CreateDb.php");
-require_once ("php/component.php");
+require ("php/CreateDb.php"); // do not use require_once()
+require ("php/component.php");
 
 $db = new CreateDb("starcany_loquodb", "liquor");
 
@@ -42,7 +42,7 @@ if (isset($_POST['remove'])){
 <body class="bg-light">
 
 <?php
-    require_once ('php/header.php');
+    require ('php/header.php'); // do not use require_once()
 ?>
 
 <div class="container-fluid">

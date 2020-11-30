@@ -2,8 +2,8 @@
 
 session_start();
 
-require_once ('php/CreateDb.php');
-require_once ('php/component.php');
+require ('php/CreateDb.php'); // do not use require_once() unless no error output is desired.
+require ('php/component.php');
 
 // create instance of Createdb class
 $database = new CreateDb("starcany_loquodb", "liquor");
@@ -67,7 +67,7 @@ echo "Connected still!";
 <body>
 
 <h1> Hi there </h1>
-<?php require_once ("php/header.php"); echo "Hiyah"; ?>
+<?php require ("php/header.php"); // do not use require_once() ?>
 <div class="container">
         <div class="row text-center py-5">
             <?php
