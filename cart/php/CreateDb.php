@@ -71,7 +71,8 @@ class CreateDb
         }else {
             echo "Query success!";
         }
-
+        $num_rows = mysqli_num_rows($result)
+        echo "num_rows: ".$num_rows;
         if(mysqli_num_rows($result) > 0){
             echo $result;
             return $result;
