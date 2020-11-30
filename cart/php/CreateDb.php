@@ -59,33 +59,33 @@ class CreateDb
                              exp_date DATE,
                              etoh_amt FLOAT,
                              img VARCHAR (255)
-                            );";
+                            );
 
-                    "CREATE TABLE IF NOT EXISTS $tablename2
+                    CREATE TABLE IF NOT EXISTS $tablename2
                             (email VARCHAR(255) NOT NULL DEFAULT 'N/A',
                              order_id INT(11) NOT NULL FOREIGN KEY REFERENCES order(order_id),
                              DOB DATE NOT NULL,
                              phone char(50),
                              customer_name VARCHAR (255)
-                            );";
+                            );
 
-                    "CREATE TABLE IF NOT EXISTS $tablename3
+                    CREATE TABLE IF NOT EXISTS $tablename3
                             (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                              vendor_name VARCHAR (255) NOT NULL DEFAULT 'N/A',
                              website VARCHAR (255) NOT NULL DEFAULT 'N/A',
                              addr VARCHAR (255) NOT NULL DEFAULT 'N/A',
                              email VARCHAR (255) NOT NULL DEFAULT 'N/A',
-                            );";
+                            );
 
-                    "CREATE TABLE IF NOT EXISTS $tablename4
+                    CREATE TABLE IF NOT EXISTS $tablename4
                             (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                              email VARCHAR (255) NOT NULL FOREIGN KEY REFERENCES customer(email),
                              review_id INT(11) NOT NULL DEFAULT 0,
                              review_details VARCHAR (255) NOT NULL DEFAULT 'N/A',
                              product_name VARCHAR (255) NOT NULL FOREIGN KEY REFERENCES liquor(product_name)
-                            );";
+                            );
 
-                    "CREATE TABLE IF NOT EXISTS $tablename5
+                    CREATE TABLE IF NOT EXISTS $tablename5
                             (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,                             
                              price FLOAT FOREIGN KEY REFERENCES liquor(price),                            
                              product_id INT(11) NOT NULL FOREIGN KEY REFERENCES liquor(id),
