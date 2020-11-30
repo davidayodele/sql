@@ -1,22 +1,34 @@
 <?php
 //order.php
 require ("php/CreateDb.php"); // do not use require_once()
-require ("php/component.php");
+require ("php/header.php");
 
-$database = new CreateDb("starcany_loquodb", "orders");
+session_start(); //storing session data for vars only
+date_default_timezone_set('America/Phoenix');
+
+$dbname = "starcany_loquodb",
+$tablename = "liquor", 
+$servername = "127.0.0.1", /*localhost*/
+$username = "starcany_loq", /*root*/
+$password = "Loquo1234!" /*blank*/
+
+$db_conn = mysqli_connect($servername, $username, $password, $dbname); // must be in order (host, user, pass, db)
+$_SESSION['conn_g'] = $db_conn;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$name = $_POST["customer_name"]; //set PHP variables like this so we can use them anywhere in code below
 	$email = $_POST["customer_email"];
 	$prod = $_POST["product_id"];
     
-    $sql = "INSERT INTO orders (product_id, email)
+    $query = "INSERT INTO orders (product_id, email)
     VALUES ($prod, $email)";
 
-    if ($database->con->query($sql) === TRUE) {
-    echo "New record created successfully";
+    $query_result = mysqli_query($db_conn, $query);
+
+    if($query_result) {
+        echo("QUERY SUCCESSFUL<br>");
     } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "QUERY Error: ".mysqli_error($db_conn)."<br>";
     }
     
 	//print output text
