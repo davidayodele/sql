@@ -11,8 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$email = $_POST["customer_email"];
 	$prod = $_POST["product_id"];
     
-    $query = "INSERT INTO orders (product_id, email)
-    VALUES ($prod, $email)";
+    // $query = "INSERT INTO orders (product_id, email)
+    // VALUES ($prod, $email)";
+
+    $query = "INSERT INTO orders (price, product_id, email, volume) VALUES
+    (34.95, '$prod', '$email', 40.0)";
 
     $query_result = mysqli_query($database->con, $query);
 
@@ -24,6 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     
 	//print output text
 	print "Thank you " . $name . "!, We have received your order! Your customer id is your email: ". $email;
-    print "We will contact you soon!";
+    print "<br><br>We will contact you soon!";
 }
 ?>
