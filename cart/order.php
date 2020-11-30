@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     // VALUES ($prod, $email)";
 
     $query = "INSERT INTO orders (price, product_id, email, volume) VALUES
-    (34.95, '$prod', '$email', 40.0)";
+    (34.95, '$prod', '$email', 40.0);";
 
     $query_result = mysqli_query($database->con, $query);
     if($query_result) {
