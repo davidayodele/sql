@@ -7,7 +7,7 @@ require_once ('php/component.php');
 
 // create instance of Createdb class
 $database = new CreateDb("starcany_loquodb", "liquor");
-echo "Connected!";
+
 //$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
 
 //$output = shell_exec($command . '/query1.sql');
@@ -44,10 +44,10 @@ if (isset($_POST['add'])){
     }
 }
 
-
+echo "Connected still!";
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,7 +66,7 @@ if (isset($_POST['add'])){
 </head>
 <body>
 
-
+<h1> Hi there </h1>
 <?php require_once ("php/header.php"); ?>
 <div class="container">
         <div class="row text-center py-5">
