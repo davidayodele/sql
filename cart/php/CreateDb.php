@@ -1,6 +1,5 @@
 <?php
 
-
 class CreateDb
 {
         public $servername;
@@ -13,11 +12,11 @@ class CreateDb
 
         // class constructor
     public function __construct(
-        $dbname = "Newdb",
-        $tablename = "Productdb",
-        $servername = "localhost",
-        $username = "root",
-        $password = ""
+        $dbname = "starcany_loquodb",
+        $tablename = "liquor", 
+        $servername = "127.0.0.1", /*localhost*/
+        $username = "starcany_loq", /*root*/
+        $password = "Loquo1234!" /*blank*/
     )
     {
       $this->dbname = $dbname;
@@ -45,9 +44,12 @@ class CreateDb
             // sql to create new table
             $sql = " CREATE TABLE IF NOT EXISTS $tablename
                             (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                             product_name VARCHAR (25) NOT NULL,
-                             product_price FLOAT,
-                             product_image VARCHAR (100)
+                             product_name VARCHAR (255) NOT NULL,
+                             price FLOAT,
+                             vendor_id INT(11) NOT NULL DEFAULT 0,
+                             exp_date DATE,
+                             etoh_amt FLOAT,
+                             img VARCHAR (255)
                             );";
 
             if (!mysqli_query($this->con, $sql)){

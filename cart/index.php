@@ -7,22 +7,26 @@ require_once ('./php/component.php');
 
 
 // create instance of Createdb class
-$database = new CreateDb("Productdb", "Producttb");
+$database = new CreateDb("loquoDB", "liquor");
+
+//$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
+
+//$output = shell_exec($command . '/query1.sql');
 
 if (isset($_POST['add'])){
     /// print_r($_POST['product_id']);
     if(isset($_SESSION['cart'])){
 
-        $item_array_id = array_column($_SESSION['cart'], "product_id");
+        $item_array_id = array_column($_SESSION['cart'], "id");
 
-        if(in_array($_POST['product_id'], $item_array_id)){
+        if(in_array($_POST['id'], $item_array_id)){
             echo "<script>alert('Product is already added in the cart..!')</script>";
             echo "<script>window.location = 'index.php'</script>";
         }else{
 
             $count = count($_SESSION['cart']);
             $item_array = array(
-                'product_id' => $_POST['product_id']
+                'id' => $_POST['id']
             );
 
             $_SESSION['cart'][$count] = $item_array;
@@ -31,7 +35,7 @@ if (isset($_POST['add'])){
     }else{
 
         $item_array = array(
-                'product_id' => $_POST['product_id']
+                'id' => $_POST['id']
         );
 
         // Create new session variable
@@ -69,7 +73,7 @@ if (isset($_POST['add'])){
             <?php
                 $result = $database->getData();
                 while ($row = mysqli_fetch_assoc($result)){
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['price'], $row['img'], $row['id']);
                 }
             ?>
         </div>
