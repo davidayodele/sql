@@ -69,7 +69,7 @@ echo "Connected still!";
 <h1> Hi there </h1>
 
 <?php 
-if(file_exists($_SESSION['ROOT_PATH'] . '/php/header.php'))
+if(file_exists($_SESSION['ROOT_PATH'] . '/php/component.php'))
 {
  echo 'OK';
 } else {
