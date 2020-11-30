@@ -72,14 +72,9 @@ echo "Connected still!";
         <div class="row text-center py-5">
             <?php
                 $result = $database->getData();
+                echo $result;
                 while ($row = mysqli_fetch_assoc($result)){
                     component($row['product_name'], $row['price'], $row['img'], $row['id']);
-                }
-                if(!$row){
-                    echo mysqli_error();
-                }
-                if(!$result){
-                    echo mysqli_error();
                 }
             ?>
         </div>
