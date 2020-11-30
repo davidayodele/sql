@@ -4,6 +4,7 @@ session_start();
 
 require('php/CreateDb.php'); // do not use require_once() unless no error output is desired.
 require('php/component.php');
+require('php/header.php');
 
 // create instance of Createdb class
 $database = new CreateDb("starcany_loquodb", "liquor");
