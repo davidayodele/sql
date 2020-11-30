@@ -11,7 +11,7 @@ $database = new CreateDb("starcany_loquodb", "liquor");
 //$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
 
 //$output = shell_exec($command . '/query1.sql');
-echo mysqli_error($database->con)."<br>";
+echo "errors: ". mysqli_error($database->con)."<br>";
 
 if (isset($_POST['add'])){
     /// print_r($_POST['product_id']);
