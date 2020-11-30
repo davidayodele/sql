@@ -57,6 +57,10 @@ DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br /
     customer_name
     */
 
+    if ($dob > '2000-11-30') {
+        echo 'You are under 21 years of age. We will need permission to process your order.';
+    }
+
     $query = "INSERT INTO customers (email, DOB, phone, customer_name) VALUES
     ('$email', '$dob', '$phone', '$name');";
 
