@@ -85,7 +85,8 @@ include("php/header.php"); // do not use require_once()
             <?php
                 echo "Hiyah";
                 $result = $database->getData();                
-                echo $result;
+                echo "Hiyah2";
+                echo "$result";
                 $row = mysqli_fetch_assoc($result);
                 echo "row val: $row";
                 while ($row = mysqli_fetch_assoc($result)){
