@@ -67,7 +67,7 @@ class CreateDb
 
         $result = mysqli_query($this->con, $sql);
         if(!$result){
-            echo "Query error: ".mysqli_error();
+            echo "Query error: ".mysqli_error($this->con);
         }else {
             echo "Query success!";
         }
@@ -75,7 +75,7 @@ class CreateDb
         if(mysqli_num_rows($result) > 0){
             return $result;
         }else {
-            echo "num_rows > 0!";
+            echo "num_rows error!";
         }
     }
 }
