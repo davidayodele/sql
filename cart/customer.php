@@ -50,6 +50,4 @@ DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br /
 	print "Thank you " . $name . "! We have received your request! Your customer id is your email: ". $email;
     print "<br><br>We will contact you soon!";
 }
-
-echo "<br><br><a href='sql/cart/index.php' class="btn">Return</a>";
 ?>
