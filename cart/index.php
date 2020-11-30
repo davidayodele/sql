@@ -3,8 +3,8 @@
 session_start();
 
 require_once ('php/CreateDb.php');
-require_once ('./php/component.php');
-
+require_once ('php/component.php');
+echo "Connected!";
 
 // create instance of Createdb class
 $database = new CreateDb("starcany_loquodb", "liquor");
