@@ -5,6 +5,7 @@ require ("php/CreateDb.php"); // do not use require_once()
 require ("php/component.php");
 
 //$db_conn = mysqli_connect($servername, $username, $password, $dbname); // must be in order (host, user, pass, db)
+$database = new CreateDb("starcany_loquodb", "orders");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$name = $_POST["customer_name"]; //set PHP variables like this so we can use them anywhere in code below
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     ($prod, '$email');";
 
     echo "$query";
-    print_r($database->con);
+    print($database->con);
     
     $query_result = mysqli_query($database->con, $query);
     if($query_result) {
