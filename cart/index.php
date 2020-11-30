@@ -12,7 +12,7 @@ $database = new CreateDb("starcany_loquodb", "liquor");
 //$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
 
 //$output = shell_exec($command . '/query1.sql');
-echo "errors: ". mysqli_error($database->con)."<br>";
+// echo mysqli_error($database->con)."<br>";
 
 if (isset($_POST['add'])){
     /// print_r($_POST['product_id']);
@@ -45,7 +45,7 @@ if (isset($_POST['add'])){
     }
 }
 
-echo "Connected still!";
+//echo "Connected still!";
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ echo "Connected still!";
 </head>
 <body>
 
-<h1> Hi there </h1>
+<!-- <h1> Hi there </h1> -->
 
 <?php 
 /*
@@ -83,9 +83,9 @@ include("php/header.php"); // do not use require_once()
 <div class="container">
         <div class="row text-center py-5">
             <?php
-                echo "Hiyah";
+                //echo "Hiyah";
                 $result = $database->getData();                
-                echo "Hiyah2";
+                //echo "Hiyah2";
                 $row = mysqli_fetch_assoc($result);
                 //echo "row val: $row";
                 while ($row = mysqli_fetch_assoc($result)){
