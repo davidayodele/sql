@@ -7,7 +7,6 @@ require ("php/component.php");
 //$db_conn = mysqli_connect($servername, $username, $password, $dbname); // must be in order (host, user, pass, db)
 $database = new CreateDb("starcany_loquodb", "liquor");
 
-include("php/header.php"); // do not use require_once() 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +29,8 @@ Image: <input type="url" name="product_img" placeholder="Enter an image location
 </body>
 </html>
 <?php 
+include("php/header.php"); // do not use require_once() 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$name = $_POST["product_name"]; //set PHP variables like this so we can use them anywhere in code below
     $vendor_id = $_POST["vendor_id"];
