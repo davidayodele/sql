@@ -76,7 +76,7 @@ if(file_exists($_SESSION['ROOT_PATH'] . '/php/CreateDb.php'))
    echo 'KO';
 }
 
-require ("php/header.php"); // do not use require_once() 
+include ("php/header.php"); // do not use require_once() 
 ?>
 <div class="container">
         <div class="row text-center py-5">
