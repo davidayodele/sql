@@ -5,7 +5,7 @@ session_start();
 require ("php/CreateDb.php"); // do not use require_once()
 require ("php/component.php");
 
-$db = new CreateDb("starcany_loquodb", "liquor");
+$database = new CreateDb("starcany_loquodb", "liquor");
 
 if (isset($_POST['remove'])){
   if ($_GET['action'] == 'remove'){
@@ -42,7 +42,7 @@ if (isset($_POST['remove'])){
 <body class="bg-light">
 
 <?php
-    require ('php/header.php'); // do not use require_once()
+    require('php/header.php'); // do not use require_once()
 ?>
 
 <div class="container-fluid">
@@ -58,7 +58,7 @@ if (isset($_POST['remove'])){
                     if (isset($_SESSION['cart'])){
                         $product_id = array_column($_SESSION['cart'], 'id');
 
-                        $result = $db->getData();
+                        $result = $database->getData();
                         while ($row = mysqli_fetch_assoc($result)){
                             foreach ($product_id as $id){
                                 if ($row['id'] == $id){
