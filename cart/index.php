@@ -2,8 +2,8 @@
 
 session_start();
 
-require ('php/CreateDb.php'); // do not use require_once() unless no error output is desired.
-require ('php/component.php');
+require('php/CreateDb.php'); // do not use require_once() unless no error output is desired.
+require('php/component.php');
 
 // create instance of Createdb class
 $database = new CreateDb("starcany_loquodb", "liquor");
@@ -77,7 +77,7 @@ if(file_exists($_SESSION['ROOT_PATH'] . '/php/CreateDb.php'))
    echo 'KO';
 }
 */
-$header = include ("php/header.php"); // do not use require_once() 
+$header = include("php/header.php"); // do not use require_once() 
 echo $header;
 ?>
 <div class="container">
