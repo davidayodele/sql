@@ -1,7 +1,7 @@
 <?php
 //order.php
-require ("php/CreateDb.php"); // do not use require_once()
-require ("php/header.php");
+//require ("php/CreateDb.php"); // do not use require_once()
+//require ("php/header.php");
 
 session_start(); //storing session data for vars only
 date_default_timezone_set('America/Phoenix');
