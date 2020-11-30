@@ -1,7 +1,8 @@
-CREATE TABLE IF NOT EXISTS $tablename3
-(id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    vendor_name VARCHAR (255) NOT NULL DEFAULT 'N/A',
-    website VARCHAR (255) NOT NULL DEFAULT 'N/A',
-    addr VARCHAR (255) NOT NULL DEFAULT 'N/A',
-    email VARCHAR (255) NOT NULL DEFAULT 'N/A',
+CREATE TABLE customers
+(email VARCHAR(255) NOT NULL DEFAULT 'N/A',
+    order_id INT(11) NOT NULL,
+    DOB DATE,
+    phone char(50),
+    customer_name VARCHAR (255),
+ 	FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );

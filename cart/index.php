@@ -94,10 +94,26 @@ include("php/header.php"); // do not use require_once()
             ?>
         </div>
 </div>
+<br>
+<br>
+<br>
+<h2>New Order</h2>
+<form method="post" action="order.php">
+Email: <input type="text" name="customer_email" placeholder="Enter your email" /><br />
+Name: <input type="email" name="customer_name" placeholder="Enter your name" /><br />
+Product ID: <input type="tel" name="product_id" placeholder="Enter the product ID" /><br />
+<input type="submit" value="Submit" />
+</form>
 
-
-
-
+<!--
+<h2>New Order</h2>
+<form method="post" action="order.php">
+Email: <input type="text" name="customer_email" placeholder="Enter your email" /><br />
+Name: <input type="email" name="customer_name" placeholder="Enter your name" /><br />
+Date of birth: <textarea name="user_text"></textarea><br />
+<input type="submit" value="Submit" />
+</form>
+-->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

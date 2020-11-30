@@ -1,7 +1,15 @@
-CREATE TABLE IF NOT EXISTS $tablename2
-(email VARCHAR(255) NOT NULL DEFAULT 'N/A',
-    order_id INT(11) NOT NULL FOREIGN KEY REFERENCES order(order_id),
-    DOB DATE,
-    phone char(50),
-    customer_name VARCHAR (255)
+CREATE TABLE orders
+(id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,                             
+    price FLOAT,                            
+    product_id INT(11) NOT NULL,
+    order_date DATE now(),
+    email VARCHAR (255) NOT NULL,
+    volume INT(11) NOT NULL DEFAULT 0,
+    FOREIGN KEY (volume) REFERENCES liquor(etoh_amt),
+    FOREIGN KEY (price) REFERENCES liquor(price),
+    FOREIGN KEY (product_id) REFERENCES liquor(id),
+    FOREIGN KEY (email) REFERENCES customers(email)
 );
+
+
+-- ALTER TABLE orders ADD CONSTRAINT fk_volume FOREIGN KEY (volume) REFERENCES liquor(etoh_amt);
