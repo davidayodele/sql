@@ -94,10 +94,10 @@ class CreateDb
                              volume INT(11) NOT NULL DEFAULT 0
                             );";
 
-        $queries = [$sql_1, $sql_2, $sql_3, $sql_4, $sql_5];
+        $queries = [$sql, $sql_1, $sql_2, $sql_3, $sql_4, $sql_5];
         
-        foreach($queries as $q => $sql){
-            if (!mysqli_query($this->con, $sql)){
+        foreach($queries as $q){
+            if (!mysqli_query($this->con, $q)){
                 echo "Error creating table : " . mysqli_error($this->con);
             }
             }else{
