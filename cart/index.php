@@ -7,7 +7,7 @@ require('php/component.php');
 //require('php/header.php');
 
 // create instance of Createdb class
-$database = new CreateDb("starcany_loquodb", "liquor", "customer", "vendor", "reviwer", "order");
+$database = new CreateDb("starcany_loquodb", "liquor");
 
 //$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
 
