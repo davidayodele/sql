@@ -4,11 +4,10 @@ session_start();
 
 require_once ('php/CreateDb.php');
 require_once ('php/component.php');
-echo "Connected!";
 
 // create instance of Createdb class
 $database = new CreateDb("starcany_loquodb", "liquor");
-
+echo "Connected!";
 //$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
 
 //$output = shell_exec($command . '/query1.sql');
