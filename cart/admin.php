@@ -9,7 +9,8 @@ $database = new CreateDb("starcany_loquodb", "liquor");
 
 //include("header.php"); // do not use require_once() 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
 <br>
 <br>
 <h2>New Product</h2>
@@ -22,7 +23,7 @@ Alcohol content: <input type="tel" name="etoh_amt" placeholder="Enter the total 
 Image: <input type="url" name="product_img" placeholder="Enter an image location (optional)" /><br />
 <input type="submit" value="Submit" />
 </form>
-
+</html>
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$name = $_POST["product_name"]; //set PHP variables like this so we can use them anywhere in code below
