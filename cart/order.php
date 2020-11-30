@@ -1,19 +1,10 @@
 <?php
 //order.php
-//require ("php/CreateDb.php"); // do not use require_once()
-//require ("php/header.php");
 
-session_start(); //storing session data for vars only
-date_default_timezone_set('America/Phoenix');
-
-$dbname = "starcany_loquodb",
-$tablename = "liquor", 
-$servername = "127.0.0.1", /*localhost*/
-$username = "starcany_loq", /*root*/
-$password = "Loquo1234!" /*blank*/
+require ("php/CreateDb.php"); // do not use require_once()
+require ("php/component.php");
 
 $db_conn = mysqli_connect($servername, $username, $password, $dbname); // must be in order (host, user, pass, db)
-$_SESSION['conn_g'] = $db_conn;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$name = $_POST["customer_name"]; //set PHP variables like this so we can use them anywhere in code below
