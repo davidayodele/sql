@@ -89,6 +89,7 @@ class CreateDb
         }else {
             echo "Query success!";
         }
+        return $result;
     }
 }
 
