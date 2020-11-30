@@ -53,5 +53,5 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     print "<br><br>Thank you, we will contact you soon if you were dissatisfied!";
 }
 
-echo "<br><br><a href='sql/cart/index.php' class="btn">Return</a>";
+echo "<br><br><a href='index.php' class="btn">Return</a>";
 ?>

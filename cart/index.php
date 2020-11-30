@@ -82,7 +82,7 @@ include("php/header.php"); // do not use require_once()
 ?>
 <br>
 <br>
-<a href='sql/cart/admin.php' class="btn">Admin</a>
+<a href='admin.php' class="btn">Admin panel</a>
 <div class="container">
         <div class="row text-center py-5">
             <?php

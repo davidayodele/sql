@@ -55,5 +55,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     print "<br><br>Please check the DB to verify!";
 }
 
-echo "<br><br><a href='sql/cart/index.php' class="btn">Return</a>";
+echo "<br><br><a href='index.php' class="btn">Return</a>";
 ?>

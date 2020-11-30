@@ -55,5 +55,5 @@ Address: <input type="text" name="vendor_addr" placeholder="Enter your Phone add
     print "<br><br>We will contact you soon!";
 }
 
-echo "<br><br><a href='sql/cart/index.php' class="btn">Return</a>";
+echo "<br><br><a href='index.php' class="btn">Return</a>";
 ?>
