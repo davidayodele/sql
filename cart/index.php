@@ -7,7 +7,7 @@ require_once ('./php/component.php');
 
 
 // create instance of Createdb class
-$database = new CreateDb("loquoDB", "liquor");
+$database = new CreateDb("starcany_loquodb", "liquor");
 
 //$command = "mysql --user={$database->username} --password='{$database->password}' ". "-h {$database->servername} -D {$database->dbname} < {'./php'}";
 
