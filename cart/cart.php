@@ -7,6 +7,8 @@ require ("php/component.php");
 
 $database = new CreateDb("starcany_loquodb", "liquor");
 
+include("php/header.php"); // do not use require_once()
+
 if (isset($_POST['remove'])){
   if ($_GET['action'] == 'remove'){
       foreach ($_SESSION['cart'] as $key => $value){
