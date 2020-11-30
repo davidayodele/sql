@@ -99,8 +99,8 @@ include("php/header.php"); // do not use require_once()
 <br>
 <h2>New Order</h2>
 <form method="post" action="order.php">
-Email: <input type="text" name="customer_email" placeholder="Enter your email" /><br />
-Name: <input type="email" name="customer_name" placeholder="Enter your name" /><br />
+Email: <input type="email" name="customer_email" placeholder="Enter your email" /><br />
+Name: <input type="text" name="customer_name" placeholder="Enter your name" /><br />
 Product ID: <input type="tel" name="product_id" placeholder="Enter the product ID" /><br />
 <input type="submit" value="Submit" />
 </form>
