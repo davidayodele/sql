@@ -82,4 +82,6 @@ Address: <input type="text" name="vendor_addr" placeholder="Enter your Phone add
 	print "Thank you " . $name . "! We have received your request! Please check the email: ". $email. " for further steps.";
     print "<br><br>We will contact you soon!";
 }
+
+echo "<br><br><a href='index.php' class='btn'>Return</a>";
 ?>

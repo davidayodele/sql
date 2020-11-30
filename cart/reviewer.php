@@ -80,4 +80,6 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
 	print "Thank you " . $email . "! We have received your review! Your rating of product " .$id. " was ". $review;
     print "<br><br>Thank you, we will contact you soon if you were dissatisfied!";
 }
+
+echo "<br><br><a href='index.php' class='btn'>Return</a>";
 ?>
