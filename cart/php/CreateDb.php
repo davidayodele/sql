@@ -81,9 +81,14 @@ class CreateDb
         }
     }
 
-    public function putData($con){
-        $con = mysqli_connect($servername, $username, $password);
-        return $con;
+    public function putData($query){
+        //$con = $this->con;
+        $result = mysqli_query($this->con, $query);
+        if(!$result){
+            echo "Query error: ".mysqli_error($this->con);
+        }else {
+            echo "Query success!";
+        }
     }
 }
 

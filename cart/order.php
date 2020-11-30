@@ -17,13 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     $query = "INSERT INTO orders (price, product_id, email, volume) VALUES
     (34.95, '$prod', '$email', 40.0)";
 
-    $query_result = mysqli_query($database->putData(), $query);
-
-    if($query_result) {
-        echo("QUERY SUCCESSFUL<br>");
-    } else {
-        echo "QUERY Error: ".mysqli_error($database->con)."<br>";
-    }
+    $database->putData($query);
     
 	//print output text
 	print "Thank you " . $name . "!, We have received your order! Your customer id is your email: ". $email;
