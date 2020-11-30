@@ -80,6 +80,11 @@ class CreateDb
             echo "num_rows error!";
         }
     }
+
+    public function putData($con){
+        $con = mysqli_connect($servername, $username, $password);
+        return $con;
+    }
 }
 
 
