@@ -7,7 +7,7 @@ require ("php/component.php");
 //$db_conn = mysqli_connect($servername, $username, $password, $dbname); // must be in order (host, user, pass, db)
 $database = new CreateDb("starcany_loquodb", "liquor");
 
-include("header.php"); // do not use require_once() 
+//include("header.php"); // do not use require_once() 
 ?>
 
 <br>

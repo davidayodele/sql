@@ -42,7 +42,7 @@ if (isset($_POST['remove'])){
 <body class="bg-light">
 
 <?php
-    require('php/header.php'); // do not use require_once()
+    //require('php/header.php'); // do not use require_once()
 ?>
 
 <div class="container-fluid">

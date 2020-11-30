@@ -7,7 +7,7 @@ require ("php/component.php");
 //$db_conn = mysqli_connect($servername, $username, $password, $dbname); // must be in order (host, user, pass, db)
 $database = new CreateDb("starcany_loquodb", "vendors");
 
-include("php/header.php"); // do not use require_once()
+//include("php/header.php"); // do not use require_once()
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
 	$name = $_POST["vendor_name"]; //set PHP variables like this so we can use them anywhere in code below
