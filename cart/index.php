@@ -75,6 +75,12 @@ echo "Connected still!";
                 while ($row = mysqli_fetch_assoc($result)){
                     component($row['product_name'], $row['price'], $row['img'], $row['id']);
                 }
+                if(!$row){
+                    echo mysqli_error();
+                }
+                if(!$result){
+                    echo mysqli_error();
+                }
             ?>
         </div>
 </div>
