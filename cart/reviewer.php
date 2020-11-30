@@ -61,7 +61,7 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     FOREIGN KEY (product_id) REFERENCES liquor(product_id)
     */
 
-    $query = "INSERT INTO reviewers (email, customer_rev, customer_rev_text, product_id) VALUES
+    $query = "INSERT INTO reviewers (email, review, review_details, product_id) VALUES
     ('$email', $review, '$details', $prod);";
 
     //echo $query."<br>";
