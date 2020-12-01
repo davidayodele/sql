@@ -59,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     */
     
     $query = "INSERT INTO orders (product_id, email, volume, price) SELECT
-    $prod, '$email', etoh, price FROM liquor 
-    WHERE liquor.product_id = orders.product_id
+    $prod, '$email', etoh_amt, price FROM liquor 
+    WHERE liquor.id = orders.product_id
     LIMIT 1;";
 
     //echo $query."<br>";
