@@ -61,7 +61,7 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     FOREIGN KEY (product_id) REFERENCES orders(product_id)
     */
     
-    $query = "INSERT INTO reviewers (email, review, review_details, product_id) SELECT
+    $query = "INSERT INTO reviewers (review, review_details, email, product_id) SELECT
     $review, '$details', customers.email, orders.product_id  
     FROM customers JOIN orders ON customers.order_id = orders.order_id 
     WHERE customers.email = '$email' AND orders.product_id = $prod
