@@ -57,12 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     FOREIGN KEY (product_id) REFERENCES liquor(id),
     FOREIGN KEY (email) REFERENCES customers(email)
     */
-
-    $query = "INSERT INTO orders (product_id, email) VALUES
-    ($prod, '$email');
     
-    INSERT INTO orders (volume, price) SELECT
-    etoh, price FROM liquor 
+    $query = "INSERT INTO orders (product_id, email, volume, price) SELECT
+    $prod, '$email', etoh, price FROM liquor 
     WHERE liquor.product_id = orders.product_id
     LIMIT 1;";
 
