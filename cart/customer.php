@@ -50,11 +50,12 @@ Name: <input type="text" name="customer_name" placeholder="Enter your name" /><b
 Phone: <input type="tel" name="customer_phone" placeholder="Enter your Phone number" /><br />
 DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br />
 
-    email VARCHAR(255) NOT NULL DEFAULT 'N/A',
+    (email VARCHAR(255) NOT NULL DEFAULT 'N/A',
     order_id INT(11) NOT NULL,
     DOB DATE,
     phone char(50),
-    customer_name
+    customer_name VARCHAR (255),
+ 	FOREIGN KEY (order_id) REFERENCES orders(order_id)
     */
 
     if ($dob > '2000-11-30') {
@@ -62,7 +63,12 @@ DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br /
     }
 
     $query = "INSERT INTO customers (email, DOB, phone, customer_name) VALUES
-    ('$email', '$dob', '$phone', '$name');";
+    ('$email', '$dob', '$phone', '$name');
+    
+    INSERT INTO customers (order_id) SELECT
+    order_id FROM orders 
+    WHERE orders.email = customers.email
+    LIMIT 1;";
 
     //echo $query."<br>";
     //print_r($database->con); // will not run if using print!!!

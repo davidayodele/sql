@@ -45,8 +45,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
     // $query = "INSERT INTO orders (product_id, email)
     // VALUES ($prod, $email)";
 
+    /*
+    (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,                             
+    price FLOAT NOT NULL,                            
+    product_id INT(11) NOT NULL,
+    order_date DATE now(),
+    email VARCHAR (255) NOT NULL,
+    volume INT(11) NOT NULL DEFAULT 0,
+    FOREIGN KEY (volume) REFERENCES liquor(etoh_amt),
+    FOREIGN KEY (price) REFERENCES liquor(price),
+    FOREIGN KEY (product_id) REFERENCES liquor(id),
+    FOREIGN KEY (email) REFERENCES customers(email)
+    */
+
     $query = "INSERT INTO orders (product_id, email) VALUES
-    ($prod, '$email');";
+    ($prod, '$email');
+    
+    INSERT INTO orders (volume, price) SELECT
+    etoh, price FROM liquor 
+    WHERE liquor.product_id = orders.product_id
+    LIMIT 1;";
 
     //echo $query."<br>";
     //print_r($database->con); // will not run if using print!!!
