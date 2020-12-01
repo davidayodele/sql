@@ -5,5 +5,5 @@ CREATE TABLE IF NOT EXISTS reviewers
     review_details VARCHAR (255) NOT NULL DEFAULT 'N/A',
     product_id INT (11) NOT NULL,
     FOREIGN KEY (email) REFERENCES customers(email),
-    FOREIGN KEY (product_id) REFERENCES liquor(product_id)
+    FOREIGN KEY (product_id) REFERENCES orders(product_id)
 );

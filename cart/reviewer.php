@@ -58,11 +58,14 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     review_details VARCHAR (255) NOT NULL DEFAULT 'N/A',
     product_id VARCHAR (255) NOT NULL,
     FOREIGN KEY (email) REFERENCES customers(email),
-    FOREIGN KEY (product_id) REFERENCES liquor(product_id)
+    FOREIGN KEY (product_id) REFERENCES orders(product_id)
     */
-
-    $query = "INSERT INTO reviewers (email, review, review_details, product_id) VALUES
-    ('$email', $review, '$details', $prod);";
+    
+    $query = "INSERT INTO reviewers (email, review, review_details, product_id) SELECT
+    $review, '$details', email, product_id  
+    FROM customers JOIN orders ON customers.order_id = orders.id 
+    WHERE email = customers.email AND product_id = orders.product_id
+    LIMIT 1;";
 
     //echo $query."<br>";
     //print_r($database->con); // will not run if using print!!!

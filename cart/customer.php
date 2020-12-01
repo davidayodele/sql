@@ -62,12 +62,9 @@ DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br /
         echo 'You are under 21 years of age. We will need permission to process your order.';
     }
 
-    $query = "INSERT INTO customers (email, DOB, phone, customer_name) VALUES
-    ('$email', '$dob', '$phone', '$name');
-    
-    INSERT INTO customers (order_id) SELECT
-    order_id FROM orders 
-    WHERE orders.email = customers.email
+    $query = "INSERT INTO customers (order_id, email, DOB, phone, customer_name) SELECT
+    '$email', '$dob', '$phone', '$name', order_id FROM orders 
+    WHERE orders.email = $email
     LIMIT 1;";
 
     //echo $query."<br>";
@@ -79,7 +76,7 @@ DOB: <input type="date" name="customer_dob" placeholder="Enter your DOB" /><br /
     if($query_result) {
         //echo("QUERY SUCCESSFUL<br><br>");
     } else {
-        echo "QUERY Error: ".mysqli_error($database->con)."<br>";
+        echo "Error: Check if email belongs to an order. ".mysqli_error($database->con)."<br>";
     }
     
 	//print output text
