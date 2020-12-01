@@ -76,7 +76,7 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     if($query_result) {
         //echo("QUERY SUCCESSFUL<br><br>");
     } else {
-        echo "QUERY Error: ".mysqli_error($database->con)."<br>";
+        echo "Error: Are you sure, you've ordered from us? Please contact us if so. ".mysqli_error($database->con)."<br>";
     }
     
 	//print output text
