@@ -62,9 +62,9 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     */
     
     $query = "INSERT INTO reviewers (email, review, review_details, product_id) SELECT
-    $review, '$details', email, product_id  
+    $review, '$details', customers.email, orders.product_id  
     FROM customers JOIN orders ON customers.order_id = orders.id 
-    WHERE reviewers.email = customers.email AND reviewers.product_id = orders.product_id
+    WHERE customers.email = $email AND orders.product_id = $prod
     LIMIT 1;";
 
     //echo $query."<br>";
