@@ -147,6 +147,9 @@ Phone: <input type="tel" name="vendor_phone" placeholder="Enter your Phone numbe
 Address: <input type="text" name="vendor_addr" placeholder="Enter your Phone address" /><br />
 <input type="submit" value="Submit" />
 </form>
+<br>
+<br>
+
 <!--
 <h2>New Order</h2>
 <form method="post" action="order.php">
