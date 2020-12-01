@@ -80,7 +80,7 @@ Review details: <textarea name="customer_rev_text"></textarea><br />
     }
     
 	//print output text
-	print "Thank you " . $email . "! We have received your review! Your rating of product " .$id. " was ". $review;
+	print "Thank you, if you've ordered product" . $prod . "from us, we'll post your review shortly! Your rating of product " .$prod. " was ". $review;
     print "<br><br>Thank you, we will contact you soon if you were dissatisfied!";
 }
 
